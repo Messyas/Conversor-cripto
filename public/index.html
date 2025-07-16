@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conversor de Unidades Ethereum</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container mt-5 mb-5">
+      <div class="text-center mb-4">
+        <h1>Conversor Ethereum</h1>
+        <p class="lead">
+          Converta entre ETH, Gwei e Wei e calcule taxas de gás.
+        </p>
+      </div>
+
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h2>Conversor de Unidades</h2>
+        </div>
+        <div class="card-body">
+          <div class="row g-3 align-items-end">
+            <div class="col-md-5">
+              <label for="fromUnit" class="form-label">De:</label>
+              <input
+                type="number"
+                class="form-control"
+                id="inputValue"
+                placeholder="Ex: 2.5"
+              />
+              <select class="form-select mt-2" id="fromUnit">
+                <option value="eth" selected>ETH</option>
+                <option value="gwei">Gwei</option>
+                <option value="wei">Wei</option>
+              </select>
+            </div>
+
+            <div class="col-md-2 text-center">
+              <button
+                class="btn btn-secondary"
+                id="swapButton"
+                type="button"
+                title="Inverter unidades"
+              >
+                &harr;
+              </button>
+            </div>
+
+            <div class="col-md-5">
+              <label for="toUnit" class="form-label">Para:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="outputValue"
+                readonly
+              />
+              <select class="form-select mt-2" id="toUnit">
+                <option value="wei" selected>Wei</option>
+                <option value="gwei">Gwei</option>
+                <option value="eth">ETH</option>
+              </select>
+            </div>
+          </div>
+          <div class="d-grid gap-2 mt-3">
+            <button class="btn btn-primary" type="button" id="convertButton">
+              Converter
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h2>Calculadora de Custo de Transação</h2>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="gasPrice" class="form-label"
+              >Preço do Gás (em Gwei)</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="gasPrice"
+              placeholder="Ex: 30"
+              value="0"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="gasLimit" class="form-label">Limite de Gás</label>
+            <input
+              type="number"
+              class="form-control"
+              id="gasLimit"
+              placeholder="Ex: 21000"
+              value="0"
+            />
+          </div>
+          <div class="d-grid gap-2">
+            <button
+              class="btn btn-primary"
+              type="button"
+              id="calculateCostButton"
+            >
+              Calcular Custo
+            </button>
+          </div>
+          <div class="mt-3" id="costResult" style="display: none">
+            <h5>Custo Total da Transação:</h5>
+            <p class="mb-1">
+              <strong>Em ETH:</strong> <span id="costEth" class="result"></span>
+            </p>
+            <p class="mb-0">
+              <strong>Em Wei:</strong> <span id="costWei" class="result"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../scripts/script.js"></script>
+  </body>
+</html>
