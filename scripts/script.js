@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- Constantes de Conversão ---
-    // BigInt é usadado para evitar problemas de precisão com números muito grandes como o de Wei.
-    const ETH_IN_WEI = 10n ** 18n;
-    const GWEI_IN_WEI = 10n ** 9n;
-
     const conversions = {
         eth: {
             wei: (val) => BigInt(Math.round(val * 1e18)),
